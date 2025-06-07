@@ -1,45 +1,35 @@
 let currentPage = 1;
-const totalPages = 13;
+const pages = document.querySelectorAll('.page');
+const totalPages = pages.length;
 
-function showContent(page) {
-    for (let i = 1; i <= totalPages; i++) {
-        const content = document.querySelector(`#page${i} .content`);
-        if (content) {
-            content.classList.toggle('active', i === page);
+function showPage(page, flip = false) {
+    pages.forEach((p, i) => {
+        p.classList.remove('show', 'flipping');
+        if (i + 1 === page) {
+            p.classList.add('show');
+            if (flip) {
+                p.classList.add('flipping');
+                setTimeout(() => {
+                    p.classList.remove('flipping');
+                }, 600); // Debe coincidir con el tiempo de transición CSS
+            }
         }
-    }
-}
-
-function updateZIndex() {
-    for (let i = 1; i <= totalPages; i++) {
-        const page = document.getElementById(`page${i}`);
-        if (i === currentPage) {
-            page.style.zIndex = totalPages + 1; // Página actual arriba
-        } else {
-            page.style.zIndex = totalPages - i + 1; // Otras páginas debajo
-        }
-    }
-}
-
-// Llama a updateZIndex() después de cambiar de página
-function nextPage() {
-    if (currentPage < totalPages) {
-        document.getElementById(`page${currentPage + 1}`).classList.add('flipped');
-        currentPage++;
-        showContent(currentPage);
-        updateZIndex();
-    }
+    });
 }
 
 function prevPage() {
     if (currentPage > 1) {
-        document.getElementById(`page${currentPage}`).classList.remove('flipped');
         currentPage--;
-        showContent(currentPage);
-        updateZIndex();
+        showPage(currentPage, true);
     }
 }
 
-// Inicializa mostrando solo el contenido de la primera página
-showContent(currentPage);
-updateZIndex();
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage, true);
+    }
+}
+
+// Mostrar la primera página al cargar
+showPage(currentPage);

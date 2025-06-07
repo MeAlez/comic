@@ -1,87 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>comic</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libro Interactivo</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-    <div class="book">
-        <div class="page" id="page1">
-            <div class="content" class="active">
-                <h2>Comic Matemático</h2>
-                <p>Un pedido magimatemático</p>
+    <div class="book-container">
+        <div class="book" id="book">
+            <!-- Páginas -->
+            <div class="page" data-page="1">
+                <div class="contenido portada">
+                    <h2>Comic <br> Matemático</h2>
+                    <p>Un pedido magimatemático</p>
+                </div>
+            </div>
+            <div class="page" data-page="2">
+                <div class="contenido">
+                    <img src="imgs/parte1.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="3">
+                <div class="contenido">
+                    <img src="imgs/parte2.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="4">
+                <div class="contenido">
+                    <img src="imgs/parte3.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="5">
+                <div class="contenido">
+                    <img src="imgs/parte4.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="6">
+                <div class="contenido">
+                    <img src="imgs/parte5.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="7">
+                <div class="contenido">
+                    <img src="imgs/parte6.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="8">
+                <div class="contenido">
+                    <img src="imgs/parte7.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="9">
+                <div class="contenido">
+                    <img src="imgs/parte8.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="10">
+                <div class="contenido">
+                    <img src="imgs/parte9.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="11">
+                <div class="contenido">
+                    <img src="imgs/parte10.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="12">
+                <div class="contenido">
+                    <img src="imgs/parte11.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="13">
+                <div class="contenido">
+                    <img src="imgs/parte12.png" alt="">
+                </div>
+            </div>
+            <div class="page" data-page="14">
+                <div class="contenido">
+                    <img src="imgs/parte13.png" alt="">
+                </div>
             </div>
         </div>
-        <div class="page" id="page2">
-            <div class="content">
-                <img src="imgs/parte1.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page3">
-            <div class="content">
-                <img src="imgs/parte2.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page4">
-            <div class="content">
-                <img src="imgs/parte3.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page5">
-            <div class="content">
-                <img src="imgs/parte4.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page6">
-            <div class="content">
-                <img src="imgs/parte5.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page7">
-            <div class="content">
-                <img src="imgs/parte6.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page8">
-            <div class="content">
-                <img src="imgs/parte7.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page9">
-            <div class="content">
-                <img src="imgs/parte8.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page10">
-            <div class="content">
-                <img src="imgs/parte9.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page11">
-            <div class="content">
-                <img src="imgs/parte10.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page12">
-            <div class="content">
-                <img src="imgs/parte11.png" alt="">
-            </div>
-        </div>
-        <div class="page" id="page13">
-            <div class="content">
-                <img src="imgs/parte12.png" alt="">
-            </div>
-        </div>
-
     </div>
-    <div class="botones">
-        <button onclick="prevPage()">Página anterior</button>
-        <button onclick="nextPage()">Siguiente página</button>
+    <div class="controls">
+        <button onclick="prevPage()">← Anterior</button>
+        <button onclick="nextPage()">Siguiente →</button>
     </div>
 
     <script src="script.js"></script>
